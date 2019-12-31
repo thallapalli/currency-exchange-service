@@ -10,17 +10,22 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import kt.springboot.currency.exchange.service.bean.ExchangeValue;
+import kt.springboot.currency.exchange.service.repo.ExchangeValueRepo;
 
 @RestController
 public class CurrencyExchangeServiceController {
 	@Autowired
 	Environment environment;
+	@Autowired
+	ExchangeValueRepo exchangeValueRepo;
 	@GetMapping("/currency-exchnage/from/{from}/to/{to}")
 	public ExchangeValue retrieveExchangeValue(@PathVariable String from,@PathVariable String to) {
-		ExchangeValue exchangeValue = new ExchangeValue(100L,from,to,BigDecimal.valueOf(65));
+		
+		
+		ExchangeValue exchangeValue =exchangeValueRepo.findByFromAndTo(from, to);
 		environment.getProperty("local.server.port");
 		exchangeValue.setPort(Integer.parseInt(environment.getProperty("local.server.port")));
-		return exchangeValue;
+	    return exchangeValue;
 		
 	}
 

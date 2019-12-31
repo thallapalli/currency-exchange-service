@@ -54,6 +54,9 @@ public class ExchangeValue {
 	public void setPort(Integer port) {
 		this.port = port;
 	}
+	public ExchangeValue() {
+		super();
+	}
 	
 	
 	
