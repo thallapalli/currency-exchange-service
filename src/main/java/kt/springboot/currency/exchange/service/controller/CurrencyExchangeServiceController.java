@@ -24,7 +24,7 @@ public class CurrencyExchangeServiceController {
 		
 		ExchangeValue exchangeValue =exchangeValueRepo.findByFromAndTo(from, to);
 		environment.getProperty("local.server.port");
-		exchangeValue.setPort(Integer.parseInt("1"));
+		exchangeValue.setPort(Integer.valueOf(environment.getProperty("local.server.port")));
 	    return exchangeValue;
 		
 	}
