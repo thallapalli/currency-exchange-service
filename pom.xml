@@ -7,7 +7,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.2.2.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository ff -->
+		<relativePath /> <!-- lookup parent from repository ffss -->
 	</parent>
 	<groupId>com.kt.microservices</groupId>
 	<artifactId>kt-springboot-currency-exchange-service</artifactId>
